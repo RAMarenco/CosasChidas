@@ -1,0 +1,132 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+main {
+    min-height: 300vh;
+    display: grid;
+}
+
+main > .main-section {    
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: 
+        "sidebar-menu image-slider recent-stores"
+    ;
+
+    gap: 1em;
+    
+    height: 30em;
+
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+main > section.main-section > div:is(.sidebar-menu, .image-slider, .recent-stores){
+    height: 20em;
+    width: 100%;
+    background-color: #EFEFEF;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 0.75em;
+
+}
+
+main > section.main-section > div.image-slider {
+    grid-area: image-slider;
+    align-self: baseline;
+    width: 100%;
+}
+
+main > section.main-section > div.sidebar-menu {
+    grid-area: sidebar-menu;
+    position:initial;
+    
+    height: 100vh;
+
+    border-radius: 0 0.75em 0.75em 0;
+}
+
+main > section.main-section > div.recent-stores {
+    grid-area: recent-stores;    
+}
+
+@media screen and (max-width: 1024px) {
+    main > .main-section {    
+        display: grid;
+        grid-template-columns: 1fr;
+
+        grid-template-areas: 
+            "image-slider"
+            "recent-stores"
+        ;
+
+        margin-inline: 2em;
+    }
+
+    main > section.main-section > div.sidebar-menu {    
+        transform: translateX(-2em);
+
+        position: fixed;
+        width: 20em;
+        height: 100vh;
+    }
+
+    main > section.main-section > div.recent-stores {
+        grid-area: recent-stores;  
+        justify-self: center;
+        width: 50%;  
+    }
+}
+
