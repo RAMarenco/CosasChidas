@@ -1,0 +1,22 @@
+@mixin flex($dir: column, $centered: false) {
+    display: flex;
+    flex-direction: $dir;
+    gap: 1rem;
+  
+    @if $centered {
+      justify-content: center;
+      align-items: center;
+    }
+    
+}
+
+@mixin grid-rows($rows: 1, $centered: false) {
+  display: grid;
+  grid-template-rows: repeat($rows, 1fr);
+  gap: 1em;
+
+  @if $centered {
+      justify-content: center;
+      align-items: center;
+  }
+}

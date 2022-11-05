@@ -1,0 +1,45 @@
+body > footer {
+    background-color: $primary-color-light;
+    min-height: 15em;
+    padding: 1em;
+    color: $secondary-color-light-alt;
+    
+    @include flex();
+    justify-content: space-between;
+
+    > div {
+        @include flex(row, true);
+        gap: 7em;
+        &.footer-actions {
+            align-items: flex-start;
+            flex: 1 0 100%;
+            flex-wrap: wrap;
+            > div {
+                text-align: center;
+                @include flex(column);                
+                gap: 1.75em;
+                > h3 {
+                    font-weight: $bold-700;
+                    font-size: 1.25em;
+                }
+    
+                > ul {                    
+                    @include flex(column);
+                    gap: 1.25em;       
+                    > li {
+                        > a {
+                            color: $secondary-color-light-alt;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }            
+        }    
+        &.footer-copyright { 
+            > span {
+                font-size: 0.9em;
+            }
+            
+        }
+    }
+}

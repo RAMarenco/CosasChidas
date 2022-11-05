@@ -1,0 +1,40 @@
+@import "./../../../variables";
+
+.NavBarMenu {
+    display: flex;
+    align-items: center;
+
+    > div {
+        z-index: 999;
+        > .NavBarMenu-Icon {
+            font-size: 2.25em;
+            color: $secondary-color-light-alt;
+            
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    >a {
+        >figure {
+            &.logo-container {
+                width: 3.625em;
+                height: 3.625em;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            >img {
+                &.logo {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                }
+            }
+        }
+    }
+}

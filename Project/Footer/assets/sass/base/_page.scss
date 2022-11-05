@@ -1,0 +1,8 @@
+body{
+    width: 100%;
+    background: $secondary-color-light-alt;
+    min-height: 100vh;
+    @include flex();
+    justify-content: space-between;    
+    gap: 0;
+}
